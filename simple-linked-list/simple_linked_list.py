@@ -27,8 +27,9 @@ class LinkedList:
     def __init__(self, values=None):
         self.top=None
         self.count = 0
-        for v in values:
-            self.push(v)
+        if values:
+            for v in values:
+                self.push(v)
 
     # custom Iterator logic
     def __iter__(self):
@@ -54,8 +55,9 @@ class LinkedList:
     # peek at the top of the stack
     def head(self): 
         if self.isEmpty():
-            raise EmptyListException("Stack Underflow: Empty List")
-        return self.top.value()
+            raise EmptyListException("The list is empty.")
+        # return self.top.value()
+        return self.top
     
     # push -> add to stack
     def push(self, value):
@@ -68,7 +70,7 @@ class LinkedList:
     # pop -> remove from stack and return 
     def pop(self):
         if self.isEmpty():
-            raise EmptyListException("Stack Underflow: Empty List")
+            raise EmptyListException("The list is empty.")
         temp = self.top
         self.top = self.top.next()
 
@@ -80,6 +82,10 @@ class LinkedList:
         return [v for v in self][::-1]
 
 if __name__ == "__main__":
+    sut = LinkedList()
+    print(sut.head().value())
+
+
     st = LinkedList([1, 2, 3, 4, 5, 6, 7, 234,])
 
     # popping one element
