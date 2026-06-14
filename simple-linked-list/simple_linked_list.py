@@ -33,15 +33,15 @@ class LinkedList:
 
     # custom Iterator logic
     def __iter__(self):
-        self.iter_data = self.top
+        self._iter_data = self.top
         return self
     
     def __next__(self):
         # iterates down the stack
-        if self.iter_data is None:
+        if self._iter_data is None:
             raise StopIteration
-        return_data = self.iter_data
-        self.iter_data = self.iter_data.next()
+        return_data = self._iter_data
+        self._iter_data = self._iter_data.next()
         return return_data.value()
 
     # defining the length condition
@@ -105,4 +105,3 @@ if __name__ == "__main__":
 
     # Reverse
     print(st.reversed())
-
