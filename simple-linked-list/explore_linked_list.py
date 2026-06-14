@@ -1,4 +1,6 @@
 # https://www.geeksforgeeks.org/dsa/implement-a-stack-using-singly-linked-list/
+# Example Class containing an iterator
+# https://docs.python.org/3/tutorial/classes.html#iterators
 class Node:
     def __init__(self, x):
         self.data = x
@@ -8,7 +10,22 @@ class myStack:
     def __init__(self):
         self.top=None
         self.count = 0
+    
+    def __iter__(self):
+        self.iter_data = self.top
+        return self
+    
+    def __next__(self):
+        # iterates down the stack
+        if self.iter_data is None:
+            raise StopIteration
+        return_data = self.iter_data
+        self.iter_data = self.iter_data.next
+        return return_data.data
 
+    def __len__(self):
+        return self.size()
+    
     def push(self, x):
         temp = Node(x)
         temp.next = self.top
@@ -60,3 +77,11 @@ if __name__ == "__main__":
 
     # checking current size
     print("Current Size:", st.size())
+
+    # Checking Current Length (1D so just size)
+    print("Current Len:", len(st))
+
+    # Iterating 
+    for dta in st:
+        print(dta)
+
