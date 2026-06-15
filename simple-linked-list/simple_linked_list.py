@@ -49,12 +49,12 @@ class LinkedList:
         return self.count
     
     # checking if stack is empty 
-    def isEmpty(self):
+    def is_empty(self):
         return self.top is None
     
     # peek at the top of the stack
     def head(self): 
-        if self.isEmpty():
+        if self.is_empty():
             raise EmptyListException("The list is empty.")
         # return self.top.value()
         return self.top
@@ -69,7 +69,7 @@ class LinkedList:
 
     # pop -> remove from stack and return 
     def pop(self):
-        if self.isEmpty():
+        if self.is_empty():
             raise EmptyListException("The list is empty.")
         temp = self.top
         self.top = self.top.next()
@@ -95,7 +95,7 @@ if __name__ == "__main__":
     print("Top Element:", st.head())
 
     # checking if the stack is empty
-    print("Is stack empty:", "Yes" if st.isEmpty() else "No")
+    print("Is stack empty:", "Yes" if st.is_empty() else "No")
 
     # Checking Current Length 
     print("Current Len:", len(st))
