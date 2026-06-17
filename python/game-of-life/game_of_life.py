@@ -46,6 +46,7 @@ def tick(matrix):
 
 
 if __name__ == "__main__": 
+
     matrix = [
             [0, 0, 0],
             [0, 1, 0],

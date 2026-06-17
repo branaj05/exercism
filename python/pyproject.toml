@@ -5,6 +5,8 @@ description = "All dependencies associated with Exercism's Python track"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "matplotlib>=3.11.0",
+    "numpy>=2.4.6",
     "pytest>=9.0.3",
     "pytest-cache>=1.0",
     "pytest-subtests>=0.15.0",
