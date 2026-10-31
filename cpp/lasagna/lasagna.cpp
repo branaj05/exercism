@@ -3,6 +3,7 @@
 int ovenTime() {
     // TODO: Return the correct time.
     // Expected Oven time is always 40 mins
+    // Just set it to 40 haha
     return 40;
 }
 
