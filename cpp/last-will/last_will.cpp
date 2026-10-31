@@ -43,3 +43,26 @@ int code_fragment() { return 923; }
 }  // namespace garcia
 
 // Enter your code below
+
+namespace estate_executor {
+int assemble_account_number(int secret_modifier) {
+    int zhang_part = zhang::bank_number_part(secret_modifier);
+    int khan_part = khan::bank_number_part(secret_modifier);
+    int garcia_part = garcia::bank_number_part(secret_modifier);
+    return zhang_part + khan_part + garcia_part;
+}
+
+int assemble_code(){
+    int blue_code = 
+        zhang::blue::code_fragment() 
+      + khan::blue::code_fragment() 
+      + garcia::blue::code_fragment();
+    int red_code = 
+        zhang::red::code_fragment() 
+      + khan::red::code_fragment() 
+      + garcia::red::code_fragment();
+
+    return blue_code * red_code;
+}
+
+}
