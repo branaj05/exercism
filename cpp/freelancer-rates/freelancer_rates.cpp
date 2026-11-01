@@ -33,6 +33,7 @@ int days_in_budget(int budget, double hourly_rate, double discount) {
     // TODO: Implement a function that takes a budget, an hourly rate, and a
     // discount, and calculates how many complete days of work that covers.
     // days = money / (money/hour) / (hour/day)
+    // note to self - there are 8 billable hours per day haha, not 24
     double hourly_rate_discount = apply_discount(hourly_rate, discount);
     return std::floor(budget / daily_rate(hourly_rate_discount));
 }
